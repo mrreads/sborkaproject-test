@@ -1,0 +1,8 @@
+{% from "./../icon/icon.nunj" import icon %}
+
+{% macro logo(clickable=true) %}
+    {{ icon({
+        iconName: 'logo',
+        className: 'logo'
+    }) }}
+{% endmacro %}

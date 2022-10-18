@@ -1,0 +1,19 @@
+{% extends "../templates/base.nunj" %}
+
+{% block content %}
+
+	{% include '../includes/header/header.nunj' %}
+
+	<div class="main">
+
+		<div class="content">
+			{% include '../includes/progress/progress.nunj' %}
+		</div>
+
+		<div class="side">
+		
+		</div>
+		
+	</div>
+
+{% endblock %}

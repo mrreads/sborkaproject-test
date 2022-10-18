@@ -1,0 +1,10 @@
+.menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 0 30px;
+    
+    & .menu__item {
+        text-decoration: none;
+    }
+}

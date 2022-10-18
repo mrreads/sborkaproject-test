@@ -1,0 +1,40 @@
+{
+	"menuItems": [
+		{
+			"name": "Women’s",
+			"path": "#"
+		},
+		{
+			"name": "Men’s",
+			"path": "#"
+		},
+		{
+			"name": "Home",
+			"path": "#"
+		},
+		{
+			"name": "Travel",
+			"path": "#"
+		},
+		{
+			"name": "Beauty",
+			"path": "#"
+		},
+		{
+			"name": "Sale",
+			"path": "#"
+		}
+	],
+	"products": [
+		{
+			"title": "Amet minim mollit non deserunt ullamco est sit",
+			"price": "525",
+			"image": "product_1.png"
+		},
+		{
+			"title": "Amet minim mollit non",
+			"price": "525",
+			"image": "product_2.png"
+		}
+	]
+}

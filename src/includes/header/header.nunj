@@ -1,0 +1,20 @@
+{% from "./../components/icon/icon.nunj" import icon %}
+
+{% from "../components/menu/menu.nunj" import menu %}
+
+{% from "../components/logo/logo.nunj" import logo %}
+{% from "../components/search/search.nunj" import search %}
+{% from "../components/cart/cart.nunj" import cart %}
+
+<div class="header">
+	<div class="container">
+
+		{{ logo() }}
+
+		{{ menu() }}
+
+		{{ search() }}
+		{{ cart() }}
+
+	</div>
+</div>

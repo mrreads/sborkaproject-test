@@ -1,0 +1,8 @@
+{% from "./../icon/icon.nunj" import icon %}
+
+{% macro search(active=false) %}
+    {{ icon({
+        iconName: 'search',
+        className: 'search'
+    }) }}
+{% endmacro %}
