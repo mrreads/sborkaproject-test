@@ -18,4 +18,10 @@
 	& .search {
 		margin-left: auto;
 	}
+
+	& .header__side {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 0 30px;
+	}
 }

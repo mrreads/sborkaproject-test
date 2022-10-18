@@ -2,19 +2,19 @@
 
 {% from "../components/menu/menu.nunj" import menu %}
 
-{% from "../components/logo/logo.nunj" import logo %}
-{% from "../components/search/search.nunj" import search %}
-{% from "../components/cart/cart.nunj" import cart %}
 
 <div class="header">
 	<div class="container">
 
-		{{ logo() }}
+		<div class="header__logo"> <img src={% inline 'logo.svg' %}> </div>
 
 		{{ menu() }}
 
-		{{ search() }}
-		{{ cart() }}
+		<div class="header__side">
+			<div class="search"> <img src={% inline 'search.svg' %}> </div>
+			<div class="cart"> <img src={% inline 'cart.svg' %}> </div>
+		</div>
+
 
 	</div>
 </div>

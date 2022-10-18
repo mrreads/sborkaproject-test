@@ -27,13 +27,15 @@
 	],
 	"products": [
 		{
-			"title": "Amet minim mollit non deserunt ullamco est sit",
+			"id": 1,
+			"name": "Amet minim mollit non deserunt ullamco est sit",
 			"price": "525",
 			"image": "product_1.png"
 		},
 		{
-			"title": "Amet minim mollit non",
-			"price": "525",
+			"id": 2,
+			"name": "Amet minim mollit non",
+			"price": "500",
 			"image": "product_2.png"
 		}
 	]

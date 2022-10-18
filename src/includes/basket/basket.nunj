@@ -1,0 +1,63 @@
+<div class="basket">
+    <p class="basket__title title">My basket</p>
+
+    <!-- Продукты храняться в global-data.json -->
+    {% for product in products %}
+    <div class="basket__product" data-id="{{ product.id }}" data-price="{{ product.price }}">
+        
+        <img class="product__image" src={% inline product.image %}>
+
+        <div class="product__content">
+
+            <p class="content__name"> {{ product.name }}  </p>
+
+            <div class="content__control">
+                <div class="control__minus" data-type="minus"> <img src={% inline 'minus.svg' %}> </div>
+                <p class="control__count" data-type="count"> 1 </p>
+                <div class="control__plus" data-type="plus"> <img src={% inline 'plus.svg' %}> </div>
+                <p class="control__price" class="control__price">{{product.price}}</p>
+            </div>
+
+        </div>
+
+        <div class="product__delete"> <img src={% inline 'delete.svg' %}> </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    // Я планировал поместить этот код отдельно, но не разобрался как вынести его в файл и подключить
+    
+    const products = document.querySelectorAll('.basket > .basket__product');
+
+    products.forEach(product => {
+        const minus = product.querySelector('[data-type=minus]');
+        const plus = product.querySelector('[data-type=plus]');
+        const count = product.querySelector('[data-type=count]');
+        const price = product.querySelector('.control__price');
+        const remove = product.querySelector('.product__delete');
+
+        minus.addEventListener('click', () => {
+            let value = parseInt(count.textContent);
+            if (value > 1)
+            {
+                let calculate = value - 1;
+                count.textContent = calculate;
+                price.textContent = parseInt(product.dataset.price) * calculate
+            }
+        });
+
+        plus.addEventListener('click', () => {
+            let value = parseInt(count.textContent);
+            if (value < 10)
+            {
+                let calculate = value + 1;
+                count.textContent = calculate;
+                price.textContent = parseInt(product.dataset.price) * calculate
+            }
+        });
+
+        remove.addEventListener('click', () => { product.remove() });
+    });
+</script>

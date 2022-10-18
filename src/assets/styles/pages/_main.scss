@@ -1,7 +1,8 @@
 .main {
 	display: flex;
 	flex-flow: row nowrap;
-
+    justify-content: end;
+    
 	flex-grow: 1;
 	& .content {
 		padding: 60px;
@@ -14,4 +15,10 @@
 		height: 100%;
 		width: 410px;
 	}
+}
+
+@media screen and (max-width: 1024px) {
+    .main .side {
+        display: none;
+    }
 }

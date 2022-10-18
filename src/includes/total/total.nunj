@@ -12,7 +12,7 @@
 
     <div class="total__price">
         <p class="price__label">Shipping</p>
-        <p class="price__value" id="shipping">0</p>
+        <p class="price__value" id="shipping">150</p>
     </div>
 
     <div class="total__price bold">
@@ -21,3 +21,34 @@
     </div>
 
 </div>
+
+<script>
+    // Я планировал поместить этот код отдельно, но не разобрался как вынести его в файл и подключить
+    
+    const subtotalEl = document.querySelector('#subtotal');
+    const taxEl = document.querySelector('#tax');
+    const shippingEl = document.querySelector('#shipping');
+    const totalEl = document.querySelector('#total');
+
+    const basketEl =  document.querySelector('.basket');
+
+    const observer = new MutationObserver((list) => countTotal());
+
+    observer.observe(basketEl, { attributes: true, childList: true, subtree: true });
+
+    const countTotal = () => {
+        let products = document.querySelectorAll('.control__price');
+        shippingEl.textContent = (products.length <= 0) ? '0' : '150';
+
+        let subtotal = 0;
+        products.forEach(e => subtotal += +e.textContent);
+        subtotalEl.textContent = subtotal;
+
+        let tax = subtotal / 100 * 8;
+        taxEl.textContent = tax;
+
+        let total = +subtotalEl.textContent + +taxEl.textContent + +shippingEl.textContent;
+        totalEl.textContent = total;
+    }
+    countTotal();
+</script>
