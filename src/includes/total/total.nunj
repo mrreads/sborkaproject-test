@@ -30,13 +30,15 @@
     const shippingEl = document.querySelector('#shipping');
     const totalEl = document.querySelector('#total');
 
+    const cartCountEl = document.querySelector('.cart__count');
+
     const basketEl =  document.querySelector('.basket');
 
-    const observer = new MutationObserver((list) => countTotal());
+    const observerTotal = new MutationObserver((list) => calculateBasket());
 
-    observer.observe(basketEl, { attributes: true, childList: true, subtree: true });
+    observerTotal.observe(basketEl, { attributes: true, childList: true, subtree: true });
 
-    const countTotal = () => {
+    const calculateBasket = () => {
         let products = document.querySelectorAll('.control__price');
         shippingEl.textContent = (products.length <= 0) ? '0' : '150';
 
@@ -49,6 +51,9 @@
 
         let total = +subtotalEl.textContent + +taxEl.textContent + +shippingEl.textContent;
         totalEl.textContent = total;
+
+
+        cartCountEl.textContent = products.length;
     }
-    countTotal();
+    calculateBasket();
 </script>

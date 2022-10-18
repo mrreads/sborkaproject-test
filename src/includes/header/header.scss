@@ -11,11 +11,11 @@
 		padding: 0 30px;
 	}
 
-	& .logo, & .search, & .cart {
+	& .side__logo, & .side__search, & .side__cart {
 		cursor: pointer;
 	}
 
-	& .search {
+	& .side__search {
 		margin-left: auto;
 	}
 
@@ -23,5 +23,27 @@
 		display: flex;
 		flex-flow: row nowrap;
 		gap: 0 30px;
+	}
+
+	& .side__cart {
+		position: relative;
+		& .cart__count {
+			position: absolute;
+			top: -5px;
+			right: -10px;
+
+			height: 16px;
+			width: 16px;
+			background-color: #3366FF;
+			border-radius: 100%;
+
+			color: #FFFFFF;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			font-size: 10px;
+		}
 	}
 }

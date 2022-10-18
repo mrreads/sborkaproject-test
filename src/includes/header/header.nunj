@@ -11,10 +11,9 @@
 		{{ menu() }}
 
 		<div class="header__side">
-			<div class="search"> <img src={% inline 'search.svg' %}> </div>
-			<div class="cart"> <img src={% inline 'cart.svg' %}> </div>
+			<div class="side__search"> <img src={% inline 'search.svg' %}> </div>
+			<div class="side__cart"> <img src={% inline 'cart.svg' %}> <p class="cart__count"> 2 </div>
 		</div>
-
 
 	</div>
 </div>
