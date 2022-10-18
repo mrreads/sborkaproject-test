@@ -1,0 +1,10 @@
+.promo {
+    padding: 30px;
+    border-bottom: 1px solid #CFCFCF;
+
+    & .promo__inputs {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0 10px;
+    }
+}

@@ -1,35 +1,30 @@
-.button {
-	@extend .transition-active;
+.button {	
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 2px solid rgba(#000, 0.3);
-	height: 54px;
-	font-weight: 700;
-	cursor: pointer;
-	font-size: 16px;
-	letter-spacing: -0.5px;
-	padding: 1px 20px 0;
 
+	border: 2px solid #3366FF;
+	border-radius: 5px;
+
+	background-color: #3366FF;
+	color: #FFFFFF;
+	height: 40px;
+
+	cursor: pointer;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	padding: 5px 30px;
+
+	transition: .3s all;
 	&:hover {
-		background-color: rgba(#000, 0.3);
-		color: rgba(#000, 0.8);
-		transition: none;
+		background-color: #FFFFFF;
+		color: #3366FF;
 	}
 
 	&:active {
-		background-color: rgba(#000, 0.25);
-		border-color: rgba(#000, 0.25);
-
-		.button__chevron-right {
-			transform: translateX(1px);
-			transition: none;
-		}
-	}
-
-	&__chevron-right {
-		margin-left: 5px;
-		transition: transform 0.1s ease-out,
-			fill $default-transition-duration $default-transition-function;
+		background-color: #3366FF;
+		color: #FFFFFF;
 	}
 }

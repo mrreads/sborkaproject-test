@@ -11,9 +11,9 @@
 		</div>
 
 		<div class="side">
-		
+			{% include '../includes/promo/promo.nunj' %}
 		</div>
-		
+
 	</div>
 
 {% endblock %}

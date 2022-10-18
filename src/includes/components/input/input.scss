@@ -1,0 +1,14 @@
+input[type=text]
+{
+    background-color: #EDEDF1;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    padding: 8px 10px;
+    color: #000000;
+    font-size: 14px;
+    &::placeholder {
+        color: #8E90A6;
+
+    }
+}

@@ -25,9 +25,9 @@
         user-select: none;
 
         &.complete {
+            color: #FFFFFF;
             background-color: #3366FF;
             border: 1px solid #3366FF;
-            color: #FFFFFF;
             & + .progress__line {
                 background-color: #3366FF;
             }

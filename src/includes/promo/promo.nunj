@@ -1,0 +1,12 @@
+{% from "./../components/button/button.nunj" import button %}
+{% from "./../components/input/text.nunj" import text %}
+
+<div class="promo">
+    <p class="promo__title title">Promo code</p>
+
+    <div class="promo__inputs">
+        {{ text({ placeholder: 'Placeholder Text' }) }}
+        {{ button({ text: 'Apply' }) }}
+    </div>
+
+</div>
