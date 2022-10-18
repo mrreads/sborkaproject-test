@@ -12,6 +12,7 @@
 
 		<div class="side">
 			{% include '../includes/promo/promo.nunj' %}
+			{% include '../includes/total/total.nunj' %}
 		</div>
 
 	</div>

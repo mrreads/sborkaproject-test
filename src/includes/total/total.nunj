@@ -1,0 +1,23 @@
+<div class="total">
+
+    <div class="total__price">
+        <p class="price__label">Subtotal</p>
+        <p class="price__value" id="subtotal">0</p>
+    </div>
+
+    <div class="total__price">
+        <p class="price__label">Tax</p>
+        <p class="price__value" id="tax">0</p>
+    </div>
+
+    <div class="total__price">
+        <p class="price__label">Shipping</p>
+        <p class="price__value" id="shipping">0</p>
+    </div>
+
+    <div class="total__price bold">
+        <p class="price__label">Total</p>
+        <p class="price__value" id="total">0</p>
+    </div>
+
+</div>

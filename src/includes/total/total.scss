@@ -1,0 +1,22 @@
+.total {
+    padding: 40px;
+
+    & .total__price {
+        display: flex;
+        flex-flow: row nowrap;
+        font-size: 14px;
+        margin-bottom: 15px;
+
+        & .price__value {
+            margin-left: auto;
+            &::before {
+                content: "$";
+            }
+        }
+
+        &.bold {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}

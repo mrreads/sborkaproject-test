@@ -1,0 +1,17 @@
+.main {
+	display: flex;
+	flex-flow: row nowrap;
+
+	flex-grow: 1;
+	& .content {
+		padding: 60px;
+		flex-grow: 1;
+
+		border-right: 1px solid #CFCFCF;
+	}
+
+	& .side {
+		height: 100%;
+		width: 410px;
+	}
+}
