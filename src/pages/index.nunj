@@ -8,6 +8,7 @@
 
 		<div class="content">
 			{% include '../includes/progress/progress.nunj' %}
+			{% include '../includes/billing/billing.nunj' %}
 		</div>
 
 		<div class="side">

@@ -1,0 +1,15 @@
+.billing {
+    margin: 0 auto;
+    margin-top: 70px;
+    max-width: 550px;
+
+    & .billing__type, & .title {
+        margin-left: 35px;
+    }
+    
+    & .billing__type {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0 80px;
+    }
+}

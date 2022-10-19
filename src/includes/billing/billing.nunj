@@ -1,0 +1,10 @@
+{% from "./../components/input/radio.nunj" import radio %}
+
+<div class="billing">
+    <p class="title">Billing Information</p>
+
+    <div class="billing__type">
+        {{ radio({ id: 1, name: "billing_type", text: "Pay with Credit Card" }) }}
+        {{ radio({ id: 2, name: "billing_type", additional: "paypal" }) }} 
+    </div>
+</div>
