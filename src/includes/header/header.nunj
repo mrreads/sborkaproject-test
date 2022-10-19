@@ -56,7 +56,7 @@ cartButton.addEventListener('click', m => {
 });
 
 window.addEventListener('resize', debounce(resizeCheck, 1000));
-
+window.addEventListener('click', )
 function resizeCheck() {
 	if (window.innerWidth > 768)
 	{
