@@ -58,12 +58,6 @@
 		& img {
 			transition: .3s all;
 		}
-		&[data-active=true]
-		{
-			& img {
-				transform: scaleX(-1);
-			}
-		}
 	}
 }
 
@@ -132,6 +126,14 @@
 			& ~ .main .side {
 				border-left: 1px solid #CFCFCF;
 				right: 0;
+			}
+		}
+	}
+	.side__cart {
+		&[data-active=true]
+		{
+			& img {
+				transform: scaleX(-1);
 			}
 		}
 	}
