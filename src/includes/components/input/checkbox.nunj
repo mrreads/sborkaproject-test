@@ -1,0 +1,9 @@
+{% macro checkbox(props) %}
+    <div class="checkbox">
+        <input type="checkbox" {% if props.checked %} checked="true" {% endif %} name="{% if props.name %}{{props.name }}{% endif %}" id="{% if props.id %}{{props.id }}{% endif %}">
+        <label for="{% if props.id %}{{props.id }}{% endif %}"> </label>
+        {% if props.additional %} <div class="{% if props.additional %}{{props.additional }}{% endif %}"> </div> {% endif %}
+        {% if props.text %} <p> {{ props.text }} </p> {% endif %}
+        {% if props.children %} <p> {{ props.children }} </p> {% endif %}
+    </div>
+{% endmacro %}

@@ -1,17 +1,44 @@
-input[type=text]
-{
-    background-color: #EDEDF1;
-    border-radius: 5px;
-    border: 0;
-    outline: 0;
-    padding: 8px 10px;
-    color: #000000;
-    font-size: 14px;
-    &::placeholder {
-        color: #8E90A6;
+.text {
+    position: relative;
 
+    & .text__title {
+        position: absolute;
+        top: -23px;
+
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 24px;
+
+        color: #555770;
+    }
+
+    & input[type=text], & input[type=number], & input[type=password]
+    {
+        background-color: #EDEDF1;
+        border-radius: 5px;
+        border: 0;
+        outline: 0;
+        padding: 8px 10px;
+        color: #000000;
+        font-size: 14px;
+    
+        height: 100%;
+        width: 100%;
+    
+        &::placeholder {
+            color: #8E90A6;
+        }
+
+        &[data-type=card_name]
+        {
+            text-transform: uppercase;
+            &::placeholder {
+                text-transform: capitalize;
+            }
+        }
     }
 }
+
 
 .radio {
     display: flex;
@@ -56,5 +83,49 @@ input[type=text]
         width: width('paypal.svg');
         height: height('paypal.svg');
         background: inline('paypal.svg');
+    }
+}
+
+.checkbox {
+    display: flex;
+    flex-flow: row nowrap;
+
+    & input {
+        display: none;
+        &:checked + label {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                min-height: 8px;
+                min-width: 8px;
+                max-height: 8px;
+                max-width: 8px;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%);
+                background-color: #3366FF;
+            }
+        }
+    }
+
+    & label {
+        cursor: pointer;
+        min-height: 18px;
+        min-width: 18px;
+        max-height: 18px;
+        max-width: 18px;
+        border: 1px solid #CFCFCF;
+        margin-right: 15px;
+    }
+
+    & p {
+        font-size: 14px;
+        color: #8C8C8C;
+
+        & > a, & > span {
+            color: #000000;
+            text-decoration: none;
+        }
     }
 }

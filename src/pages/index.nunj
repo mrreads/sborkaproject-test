@@ -1,6 +1,6 @@
 {% extends "../templates/base.nunj" %}
 
-{% block title %} Cart {% endblock %}
+{% block title %} Billing {% endblock %}
 
 {% block content %}
 

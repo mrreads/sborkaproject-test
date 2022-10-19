@@ -1,3 +1,6 @@
 {% macro text(props) %}
-    <input type="text" placeholder="{% if props.placeholder %}{{props.placeholder }}{% endif %}">
+    <div class="text">
+        {% if props.title %} <p class="text__title"> {{ props.title }} </p> {% endif %}
+        <input type="text" data-type="{% if props.type %}{{props.type }}{% endif %}" placeholder="{% if props.placeholder %}{{props.placeholder }}{% endif %}">
+    </div>
 {% endmacro %}

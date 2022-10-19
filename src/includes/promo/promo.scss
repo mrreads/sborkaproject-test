@@ -7,7 +7,7 @@
         flex-flow: row nowrap;
         gap: 0 10px;
         
-        & input[type=text] {
+        & .text {
             flex-grow: 1;
         }
     }

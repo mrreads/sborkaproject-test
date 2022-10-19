@@ -1,9 +1,9 @@
 .billing {
     margin: 0 auto;
     margin-top: 70px;
-    max-width: 550px;
+    max-width: 660px;
 
-    & .billing__type, & .title {
+    & .billing__type, & .title, & .billing__buttons, & .billing__checkboxes {
         margin-left: 35px;
     }
     
@@ -11,5 +11,55 @@
         display: flex;
         flex-flow: row nowrap;
         gap: 0 80px;
+    }
+
+    & .billing__card {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 45px 0;
+        max-width: 550px;
+        box-sizing: border-box;
+
+        & .card__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 0 30px;
+
+            & .text {
+                height: 40px;
+            }
+
+            &.full {
+                grid-template-columns: 1fr;
+                & .text {
+                    width: 100%;
+                }
+            }
+        }
+
+        margin-top: 45px;
+        padding: 45px 30px;
+
+        background: #FFFFFF;
+        border: 1px solid #CFCFCF;
+        box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
+    }
+    
+    & .billing__buttons {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-top: 45px;
+    }
+
+    & .billing__checkboxes {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 12px 0;
+
+        margin-top: 40px;
     }
 }

@@ -1,10 +1,84 @@
+{% from "./../components/input/checkbox.nunj" import checkbox %}
 {% from "./../components/input/radio.nunj" import radio %}
+{% from "./../components/input/text.nunj" import text %}
+
+{% from "./../components/button/button.nunj" import button %}
 
 <div class="billing">
     <p class="title">Billing Information</p>
 
     <div class="billing__type">
-        {{ radio({ id: 1, name: "billing_type", text: "Pay with Credit Card" }) }}
+        {{ radio({ id: 1, name: "billing_type", text: "Pay with Credit Card", checked: true }) }}
         {{ radio({ id: 2, name: "billing_type", additional: "paypal" }) }} 
     </div>
+
+    <div class="billing__card">
+        <div class="card__row full">
+            {{ text({ title: "Name on card", placeholder: 'Placeholder Text', type: "card_name" }) }}
+        </div>
+
+        <div class="card__row">
+            {{ text({ title: "Card number", type: "card_number" }) }}
+            {{ text({ type: "card_number" }) }}
+            {{ text({ type: "card_number" }) }}
+            {{ text({ type: "card_number" }) }}
+        </div>
+
+        <div class="card__row">
+            {{ text({ title: "Expire date", type: "card_date" }) }}
+            {{ text({ title: "CVV code", type: "card_cvv" }) }}
+        </div>
+
+    </div>
+
+    <div class="billing__checkboxes">
+        {{ checkbox({ id: 3, name: "billing_type", text: "Save information of this credit card" }) }}
+        {{ checkbox({ id: 4, name: "billing_type", children: "<p> I accept the <a href='#'> terms and comditions </a> and the <a href='#'> Privacy Policies </a> </p>" }) }} 
+    </div>
+
+    <div class="billing__buttons">
+        {{ button({ text: 'Back', className: "gray" }) }}
+        {{ button({ text: 'Check Out' }) }}
+    </div>
 </div>
+
+
+<script>
+const cardName = document.querySelectorAll("input[data-type=card_name");
+const cardNumber = document.querySelectorAll("input[data-type=card_number");
+const cardDate = document.querySelectorAll("input[data-type=card_date");
+const cardCvv = document.querySelectorAll("input[data-type=card_cvv");
+
+cardName.forEach(input => {
+    input.addEventListener('input', i => i.target.value = i.target.value.replace(/[^a-zA-Z] +/g, ''));
+});
+
+cardNumber.forEach(input => {
+    input.setAttribute('maxLength', 4);
+    input.addEventListener('input', i => i.target.value = i.target.value.replace(/\D+/g, ''))
+});
+
+cardCvv.forEach(input => {
+    input.setAttribute('type', 'password');
+    input.setAttribute('maxLength', 3);
+    input.addEventListener('input', i => i.target.value = i.target.value.replace(/\D+/g, ''))
+});
+
+cardDate.forEach(input => {
+    input.setAttribute('maxLength', 5);
+    input.addEventListener('keypress', i => {
+
+        if (i.keyCode < 47 || i.keyCode > 57)
+            i.preventDefault();
+        
+        if(input.value.length !== 1 || input.value.length !== 3) {
+            if(i.keyCode == 47)
+                i.preventDefault();
+        }
+        
+        if (input.value.length === 2)
+            input.value += '/';
+    })
+});
+
+</script>
