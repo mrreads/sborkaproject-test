@@ -57,6 +57,6 @@ export default function html() {
 				})
 			)
 		)
-		.pipe(gulpif(PRODUCTION, minifyInline()))
+		//.pipe(gulpif(PRODUCTION, minifyInline()))
 		.pipe(gulp.dest(PATHS.build.html));
 }
