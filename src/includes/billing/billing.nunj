@@ -44,6 +44,8 @@
 
 
 <script>
+// Я планировал поместить этот код отдельно, но не разобрался как вынести его в файл и подключить
+
 const cardName = document.querySelectorAll("input[data-type=card_name");
 const cardNumber = document.querySelectorAll("input[data-type=card_number");
 const cardDate = document.querySelectorAll("input[data-type=card_date");

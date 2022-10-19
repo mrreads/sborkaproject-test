@@ -6,14 +6,80 @@
 <div class="header">
 	<div class="container">
 
-		<div class="header__logo"> <img src={% inline 'logo.svg' %}> </div>
+		<div class="header__logo"> <a href="#"> <img src={% inline 'logo.svg' %}> </a> </div>
 
 		{{ menu() }}
 
 		<div class="header__side">
 			<div class="side__search"> <img src={% inline 'search.svg' %}> </div>
-			<div class="side__cart"> <img src={% inline 'cart.svg' %}> <p class="cart__count"> 2 </div>
+			<div class="side__cart"> <img src={% inline 'cart.svg' %}> <p class="cart__count"> 2 </p> </div>
+
+			<div class="side__menu"> <img src={% inline 'burger.svg' %}> </div>
 		</div>
 
 	</div>
 </div>
+
+<script>
+// Я планировал поместить этот код отдельно, но не разобрался как вынести его в файл и подключить
+
+const header = document.querySelector('.header');
+
+const sideMenu = document.querySelector('.side__menu');
+let sideMenuActive = false;
+sideMenu.dataset.active = sideMenuActive;
+
+sideMenu.addEventListener('click', m => {
+	sideMenuActive = !sideMenuActive;
+	sideMenu.dataset.active = sideMenuActive;
+	header.dataset.menu = sideMenuActive;
+
+
+	cartButtonActive = false;
+	cartButton.dataset.active = false;
+	header.dataset.basket = false;
+});
+
+
+const cartButton = document.querySelector('.side__cart');
+let cartButtonActive = false;
+cartButton.dataset.active = cartButtonActive;
+
+cartButton.addEventListener('click', m => {
+	cartButtonActive = !cartButtonActive;
+	cartButton.dataset.active = cartButtonActive;
+	header.dataset.basket = cartButtonActive;
+
+	sideMenuActive = false;
+	sideMenu.dataset.active = false;
+	header.dataset.menu = false;
+});
+
+window.addEventListener('resize', debounce(resizeCheck, 1000));
+
+function resizeCheck() {
+	if (window.innerWidth > 768)
+	{
+		sideMenuActive = false;
+		sideMenu.dataset.active = false;
+		header.dataset.menu = false;
+	}
+	if (window.innerWidth > 1024)
+	{	
+		cartButtonActive = false;
+		cartButton.dataset.active = false;
+		header.dataset.basket = false;
+	}
+}
+
+// Чтобы не нагружать сильно resiz'ом
+function debounce(f, ms) {
+  let isCooldown = false;
+  return function() {
+    if (isCooldown) return;
+    f.apply(this, arguments);
+    isCooldown = true;
+    setTimeout(() => isCooldown = false, ms);
+  };
+}
+</script>
